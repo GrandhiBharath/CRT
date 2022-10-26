@@ -1,0 +1,14 @@
+l=list(map(int,input().split()))
+i,a=0,0
+j=len(l)-1
+while(i<=j):
+    if(l[i]==l[j]):
+        a=i
+    else:
+        break
+    i=i+1
+    j=j-1
+if(a!=0):
+    print("palindrome")
+else:
+    print("no")
