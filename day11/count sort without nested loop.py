@@ -7,7 +7,7 @@ for i in range(1,len(l1)):
     l1[i]=l1[i-1]+l1[i]
 l2=[0]*len(l)
 for i in l:
-    b=l1[i-a]
+    b=l1[i-a]-1
     l2[b]=i
     l1[i-a]-=1
 print(l2)
