@@ -27,20 +27,17 @@ def insert(head,tail,value):
     return tail
 def display(p):
     if(p==None):
-        print("\ndoubleLinkedList is empty\n")
-        return
+        print("Empty list")
     else:
+        while(p!=tail):
+            print(p.value,end=" ")
+            p=p.nextaddress
         print(p.value)
-        if(p==tail):
-            k=tail
-        p=p.nextaddress
-        if(p!=None):
-            display(p)
-        else:
-            print()
-            while(k!=None):
-                print(k.value)
-                k=k.prevaddress
+        print()
+        while(p!=head):
+            print(p.value,end=" ")
+            p=p.prevaddress
+        print(p.value)
 def removefirst(head):
     p=head
     if(p==None):
@@ -72,7 +69,7 @@ def insertafter(k,value,head,tail):
         head=l
         tail=l
     else:
-        while(c<k):
+        while(c<k-1):
             if(p!=None):
                 p=p.nextaddress
                 c+=1
@@ -95,7 +92,7 @@ def insertbefore(k,value,head,tail):
     else:
         while(c<k-1):
             if(p!=None):
-                p=p.address
+                p=p.nextaddress
                 c+=1
             else:
                 print("\ninvalid pos\n")
@@ -121,21 +118,21 @@ def delspecpos(k):
     a.prevaddress=t
     p.nextaddress=None
     del(p)
-def reversedisplay(head):
-    p=head
+def reversedisplay(tail):
+    p=tail
     if(p==None):
         print("\ndoubleLinkedList is empty\n")
         return
     else:
-        t=p.value
-        a=p
-        p=p.nextaddress
-        if(p!=None):
-            reversedisplay(p)
-            print(t)
-        else:
-            print(t)
-            return
+        while(p!=head):
+            print(p.value,end=" ")
+            p=p.prevaddress
+        print(p.value)
+        print()
+        while(p!=tail):
+            print(p.value,end=" ")
+            p=p.nextaddress
+        print(p.value)
 def reverselist(head,tail):
     p=head
     q=tail
@@ -236,7 +233,7 @@ while(1):
         else:
             delspecpos(k)
     elif(c==9):
-        reversedisplay(head)
+        reversedisplay(tail)
     elif(c==10):
         k=head
         head=reverselist(head,tail)
