@@ -17,11 +17,8 @@ for i in range(len(s2)):
     for j in range(len(s1)):
         print(m[i][j],end=" ")
     print()
-ma=0
-for i in range(len(s2)):
-    for j in range(len(s1)):
-        if(m[i][j]>ma):
-            ma=m[i][j]
+ma=m[len(s2)-1][len(s1)-1]
 a=len(s1)-ma-1
 b=len(s2)-ma-1
 print(a+b+ma)
+
