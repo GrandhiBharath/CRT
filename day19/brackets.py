@@ -1,0 +1,32 @@
+def brackets(o,c,op,f):
+    if(o==0 and c==0):
+        print(op)
+        return
+    else:
+        if(o==c):
+            op=op+"("
+            o-=1
+            brackets(o,c,op,f)
+            return
+        else:
+            if(o==0):
+                op=op+")"
+                c-=1
+                brackets(o,c,op,f)
+                return
+            else:
+                if(f==0):
+                    op=op+"("
+                    o-=1
+                    brackets(o,c,op,f)
+                    f=1
+                    return
+                else:
+                    op=op+")"
+                    c-=1
+                    brackets(o,c,op,f)
+                    f=0
+                    return
+o=int(input())
+c=int(input())
+brackets(o,c,"",0)
